@@ -13,18 +13,18 @@ import { parse } from 'path';
       isGlobal: true,
     }),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: process.env.MYSQL_HOST,
-      port: parseInt(process.env.MYSQL_PORT),
-      username: process.env.MYSQL_USERNAME  ,
-      password: process.env.MYSQL_PASSWORD,
-      database: process.env.MYSQL_DATABASE,
+      type: "postgres",
+      host: process.env.POSTGRES_HOST,
+      port: parseInt(process.env.POSTGRES_PORT),
+      username: process.env.POSTGRES_USERNAME,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DATABASE,
       autoLoadEntities: true,
       synchronize: true,
-      ssl: process.env.MYSQL_SSL === "true",
+      ssl: process.env.POSTGRES_SSL === "true",
       extra: {
         ssl:
-          process.env.MYSQL_SSL === "true"
+          process.env.POSTGRES_SSL === "true"
             ? {
                 rejectUnauthorized: false,
               }
